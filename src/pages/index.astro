@@ -1,95 +1,44 @@
 ---
+import "../global.css";
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Counter from '../components/Counter.svelte';
+import GameShowcase from '../components/GameShowcase.svelte';
+
+const games = [
+	{"name":"🏁 Combo Racer", "body":"Collect powerups and combo them to win the race", "video":"https://www.youtube.com/embed/dQw4w9WgXcQ"},
+	{"name":"⭐ Collectathon", "body":"Collect all the things", "video":"https://www.youtube.com/embed/dQw4w9WgXcQ"},
+	{"name":"🎲 Board Game", "body":"Buy out the board and bankrupt other players to win", "video":"https://www.youtube.com/embed/dQw4w9WgXcQ"},
+	{"name":"👻 Abandoned Asylum", "body":"Survive a night in the Abandoned Asylum", "video":"https://www.youtube.com/embed/dQw4w9WgXcQ"},
+	{"name":"🔪 Murder Mystery", "body":"Find clues and Question witnesses to find the murderer", "video":"https://www.youtube.com/embed/dQw4w9WgXcQ"},
+	{"name":"🧙 ARPG", "body":"Tag Team ARPG, swap in when other players die", "video":"https://youtube.com/embed/oPDMSB58NZM"}];
 ---
-<Layout title="Welcome to Astro.">
-	<main>
-		<div class="drawer drawer-mobile">
-			<input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-			<div class="drawer-content flex flex-col items-center justify-center">
-				<!-- Page content here -->
-				<label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Open drawer</label>
-			
-			</div> 
-			<div class="drawer-side">
-				<label for="my-drawer-2" class="drawer-overlay"></label> 
-				<ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
-				<!-- Sidebar content here -->
-				<li><a>Sidebar Item 1</a></li>
-				<li><a>Sidebar Item 2</a></li>
-				</ul>
-			
+<Layout title="Welcome to Astro.">	
+	<div class="hero h-[20rem] py-15 bg-base-200">
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <h1 class="text-5xl font-bold">🎉Birthday🎉 Prototype Showdown!</h1>
+          <p class="py-10">Choose what game becomes this year's birthday game. 
+            Every few weeks the games will be ranked, and we eliminate the last place game.</p>        
+        </div>
+      </div>
+    </div>
+	<GameShowcase games={games} client:load/>
+	<div class="border-base-300 bg-base-200 rounded-b-box rounded-tr-box flex min-h-[7rem] min-w-screen max-w-screen flex-wrap items-center justify-center gap-2 overflow-x-hidden border bg-cover bg-top p-4 undefined">
+   		<button class="btn btn-wide btn-primary"> Vote Now!</button>
+	</div>
+	<!--<div class="flex flex-row hero">
+	 	<div class="w-1/5 pl-15">
+			<div class="grid grid-cols-1">
+				<ul class="menu p-4 overflow-y-auto bg-base-100 text-base-content">
+					 {games.map((data) => <li><button class="btn glass">{data.name}</button></li>)}
+				</ul>  
 			</div>
 		</div>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			Check out the <code>src/pages</code> directory to get started.<br/>
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card href="https://docs.astro.build/" title="Documentation" body="Learn how Astro works and explore the official API docs." /> 
-			<Card href="https://astro.build/integrations/" title="Integrations" body="Supercharge your project with new frameworks and libraries." /> 
-			<Card href="https://astro.build/themes/" title="Themes" body="Explore a galaxy of community-built starter themes." /> 
-			<Card href="https://astro.build/chat/" title="Chat" body="Come say hi to our amazing Discord community. ❤️" />
-		</ul>
-			<Counter client:visible>
-				<h1>Hello, Svelte!</h1>
-				<a href="https://strawpoll.vote/polls/zhz5zxjc/vote"> Vote Now!</a>
-			</Counter>
-	</main>	
+		<div class="divider divider-horizontal"></div>
+		<div class="w-4/5 pr-4">
+			{games.map((data) => <Game name={data.name} body={data.body} video="" />)}			
+		</div>
+	</div>
+	<div class="border-base-300 bg-base-200 rounded-b-box rounded-tr-box flex min-h-[6rem] min-w-screen max-w-screen flex-wrap items-center justify-center gap-2 overflow-x-hidden border bg-cover bg-top p-4 undefined">
+		<button class="btn btn-wide btn-primary"> Vote Now!</button>
+	</div>-->
 </Layout>
-
-<style>
-	:root {
-		--astro-gradient: linear-gradient(0deg,#4F39FA, #DA62C4);
-	}
-
-	h1 {
-		margin: 2rem 0;
-	}
-
-	main {
-		margin: auto;
-    	padding: 1em;
-		max-width: 60ch;
-	}
-
-	.text-gradient {
-		font-weight: 900;
-		background-image: var(--astro-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 100% 200%;
-		background-position-y: 100%;
-		border-radius: 0.4rem;
-		animation: pulse 4s ease-in-out infinite;
-	}
-
-	@keyframes pulse {
-		0%, 100% { background-position-y: 0%; }
-		50% { background-position-y: 80%; }
-	}
-
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		background: #4F39FA;
-		padding: 1.0rem;
-		border-radius: 0.4rem;
-		color: var(--color-bg);
-	}
-
-	.instructions code {
-		font-size: 0.875em;
-		border: 0.1em solid var(--color-border);
-		border-radius: 4px;
-		padding: 0.15em 0.25em;
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-</style>
