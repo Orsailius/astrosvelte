@@ -4,14 +4,14 @@ import Layout from '../layouts/Layout.astro';
 import GameShowcase from '../components/GameShowcase.svelte';
 
 const games = [
-	{"name":"🏁 Combo Racer", "body":"Collect powerups and combo them to win the race", "video":"https://www.youtube.com/embed/dQw4w9WgXcQ"},
-	{"name":"⭐ Collectathon", "body":"Collect all the things", "video":"https://www.youtube.com/embed/dQw4w9WgXcQ"},
-	{"name":"🎲 Board Game", "body":"Buy out the board and bankrupt other players to win", "video":"https://www.youtube.com/embed/dQw4w9WgXcQ"},
-	{"name":"👻 Abandoned Asylum", "body":"Survive a night in the Abandoned Asylum", "video":"https://www.youtube.com/embed/dQw4w9WgXcQ"},
-	{"name":"🔪 Murder Mystery", "body":"Find clues and Question witnesses to find the murderer", "video":"https://www.youtube.com/embed/dQw4w9WgXcQ"},
+	{"name":"🏁 Combo Racer", "body":"Collect powerups and combo them to win the race", "video":"https://www.youtube.com/embed/09FmnHcsZcQ"},
+	{"name":"⭐ Collectathon", "body":"Collect all the things", "video":"https://www.youtube.com/embed/pRc2lfOVWfk"},
+	{"name":"🎲 Board Game", "body":"Buy out the board and bankrupt other players to win", "video":"https://www.youtube.com/embed/fUQboaTv45Y"},
+	{"name":"👻 Abandoned Asylum", "body":"Survive a night in the Abandoned Asylum", "video":"https://www.youtube.com/embed/Z08VCvUJK9o"},
+	{"name":"🔪 Murder Mystery", "body":"Find clues and Question witnesses to find the murderer", "video":"https://www.youtube.com/embed/6TNp-uW22-8"},
 	{"name":"🧙 ARPG", "body":"Tag Team ARPG, swap in when other players die", "video":"https://youtube.com/embed/oPDMSB58NZM"}];
 ---
-<Layout title="Welcome to Astro.">	
+<Layout title="Birthday Prototype Showdown">	
 	<div class="hero h-[20rem] py-15 bg-base-200">
       <div class="hero-content text-center">
         <div class="max-w-md">
@@ -23,7 +23,9 @@ const games = [
     </div>
 	<GameShowcase games={games} client:load/>
 	<div class="border-base-300 bg-base-200 rounded-b-box rounded-tr-box flex min-h-[7rem] min-w-screen max-w-screen flex-wrap items-center justify-center gap-2 overflow-x-hidden border bg-cover bg-top p-4 undefined">
-   		<button class="btn btn-wide btn-primary"> Vote Now!</button>
+   		<button class="btn btn-wide btn-primary" > 
+		   <a target="_blank" href="https://strawpoll.vote/polls/zhz5zxjc/vote?s=0">Vote Now!</a>
+		</button>
 	</div>
 	<!--<div class="flex flex-row hero">
 	 	<div class="w-1/5 pl-15">
