@@ -11,8 +11,8 @@
 	}
 </script>
 
-<div class="flex flex-row hero">
-    <div class="w-1/5 pl-15">
+<div class="flex sm:flex-row flex-col hero">
+    <div class="sm:w-1/5 sm:pl-15 pl-0 w-100">
        <div class="grid grid-cols-1">
            <ul class="menu p-4 overflow-y-auto bg-base-100 text-base-content">
                 {#each games as {name}, i}
